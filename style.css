@@ -1,147 +1,188 @@
-body {
-  font-family: "Captain Howdy";
-  background-color: #99a106;
-  color: #99a106f;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url(tomhodwyupscale.jpg); background-repeat: repeat; background-size: cover;
+/* style.css */
+:root {
+  --primary: #99a106;
+  --secondary: #d98c4e;
+  --dark: #403b27;
+  --light: #f5f5f5;
+  --accent: #0969da;
 }
 
-.header {
-  margin: 180px 0;
-}
-
-.header__avatar {
-  border-radius: 40%;
-}
-
-.header__title {
-  margin: 40px 0 10px 0;
-  font-size: 60px;
-  line-height: 1.2;
-  font-family: "Captain Howdy";
-  position: relative;
-bottom: 10px;
-right: 85px;
-
-}
-
-.header__subtitle {
-  color: #403b27;
-  font-size: 18px;
-  line-height: 1.4;
+* {
   margin: 0;
-    position: relative;
-bottom: 10px;
-right: 90px;
-}
-
-.links {
-  width: 350px;
-  margin-bottom: 50px;
-}
-
-.links__header {
-  font-family: "Captain Howdy";
-  font-size: 35px;
-  line-height: 1.4;
-  margin: 0 0 15px 0;
-position: relative;
-bottom: 870px;
-left: 710px;
-}
-
-.links__container {
-  background-color: #d98c4e;
-  list-style-type: none;
-  border: 10px solid hsla(210, 18%, 87%, 1);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px 20px 10px;
-  gap: 12px;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+  padding: 0;
   box-sizing: border-box;
-  margin: 0;
-  position: absolute;
-right: 100px;
-top: 100px;
- 
-}
-
-.links__link,
-.links__title {
-  font-size: 13px;
-  font-size: 2;
-  color: #57606a;
-}
-
-.links__link {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px 0px 10px;
-  gap: 30px;
-  border-bottom: 1px solid hsla(210, 18%, 87%, 1);
-  width: 300px;
-}
-
-.links__link:last-child {
-  border-bottom: none;
-}
-
-.linsk__link,
-.links__link:visited {
-  text-decoration: none;
-  color: #0969da;
-}
-
-.links__title {
-  margin: 0;
-  min-width: 100px;
-}
-
-footer {
-  margin: 0 0 40px 0;
-}
-.button-link {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  width: 320px;
-  background: #d98c4e;
-  border: 1px solid rgba(27, 31, 36, 0.15);
-  border-radius: 5px;
-
-  font-size: 14px;
-  line-height: 1.4;
-
-  color: #0969da;
-  text-decoration: none;
-
-    position: absolute;
-right: 120px;
-top: 280px;
- 
-}
-
-.button-link:hover {
-  background-color: #0969da;
-  color: #fff;
-  box-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
 }
 
 @font-face {
-  font-family: "Captain Howdy";  
-  src: url("../fonts/captainhowdy.tff") format("truetype"); 
-  font-style: normal; 
-  font-weight: normal; 
-} 
+  font-family: "Captain Howdy";
+  src: url("../fonts/captainhowdy.tff") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+body {
+  font-family: "Captain Howdy", sans-serif;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url(tomhodwyupscale.jpg) no-repeat center center fixed;
+  background-size: cover;
+  color: var(--light);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+.business-card {
+  max-width: 500px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  margin-bottom: 30px;
+}
+
+.avatar-wrapper {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  border: 4px solid var(--secondary);
+  padding: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.avatar-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.header__avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.header__title {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+
+.header__subtitle {
+  font-size: 1.2rem;
+  color: var(--secondary);
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.header__role {
+  color: var(--light);
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.contacts {
+  margin: 30px 0;
+}
+
+.contacts__list {
+  list-style: none;
+  background: rgba(217, 140, 78, 0.8);
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.contacts__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contacts__item:last-child {
+  border-bottom: none;
+}
+
+.contacts__label {
+  font-weight: bold;
+  color: var(--dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.contacts__link {
+  color: var(--light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  word-break: break-all;
+  text-align: right;
+}
+
+.contacts__link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--secondary);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 600px) {
+  .business-card {
+    padding: 30px 20px;
+  }
+  
+  .header__title {
+    font-size: 1.8rem;
+  }
+  
+  .contacts__item {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .contacts__link {
+    text-align: center;
+  }
+}
