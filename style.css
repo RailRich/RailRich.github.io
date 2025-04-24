@@ -89,9 +89,16 @@ body {
 
 .header__subtitle {
   font-size: 1.2rem;
-  color: var(--secondary);
+  color: var(--secondary); /* Оранжевый цвет */
   margin-bottom: 5px;
   font-weight: bold;
+  text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.5), /* Основная тень */
+    0 0 10px rgba(217, 140, 78, 0.6); /* Свечение в цвет текста */
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
 }
 
 .header__role {
